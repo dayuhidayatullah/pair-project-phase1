@@ -7,7 +7,7 @@
 
         <select name="ComplaintId" id="">
             <option value="">--Choose Complaint--</option>
-            <% complaint.forEach(e => { %>
+            <% data.forEach(e => { %>
                 <option value="<%= e.id %>"><%= e.complaint_description %></option>
             <% }) %>
         </select><br><br>
