@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   ComplaintUser.init({
-    ComplaintId: DataTypes.STRING,
-    UserId: DataTypes.STRING
+    ComplaintId: DataTypes.INTEGER,
+    UserId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'ComplaintUser',
