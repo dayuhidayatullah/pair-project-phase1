@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List User</title>
-</head>
-<body>
+<%- include('partials/header') %>
+<!-- Content-->
+<div class="container">
+<h2 class="text-center">List Complaint</h2>
     <a href="/users/addUser"><button>Add User</button></a>
     <table border="1">
         <thead>
@@ -41,5 +37,5 @@
             <% }) %>
         </tbody>
     </table>
-</body>
-</html>
+</div>
+<%- include('partials/footer') %> 

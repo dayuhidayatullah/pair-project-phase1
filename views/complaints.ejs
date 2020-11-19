@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List Tour</title>
-</head>
-<body>
+<%- include('partials/header') %>
+<!-- Content-->
+<div class="container">
+<h2 class="text-center">List Complaint</h2>
     <a href="/complaints/addComplaint"><button>Add Location Complaint</button></a>
     <table border="1">
         <thead>
@@ -25,5 +21,5 @@
             <% }) %>
         </tbody>
     </table>
-</body>
-</html>
+</div>
+<%- include('partials/footer') %> 
