@@ -4,27 +4,28 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+    getFullName(){
+      return `${this.firstName} ${this.lastName}`
+    }
     static associate(models) {
-      // define association here
-      User.belongsToMany(models.Customer,{
-        through: models.Ticket
-      })
+      User.belongsToMany(models.Complaint, {through: models.ComplaintUser})
     }
   };
   User.init({
-    first_name: DataTypes.STRING,
-    last_name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    username: DataTypes.STRING,
+    firstName: DataTypes.STRING,
+    lastName: DataTypes.STRING,
+    userName: DataTypes.STRING,
+    gmail: DataTypes.STRING,
     password: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'User',
+    hooks: {
+      beforeCreate: (instance, options) => {
+        if(instance.lastName == '') instance.lastName = instance.firstName
+        if(instance.firstName == '') instance.firstName = instance.lastName
+      }
+    }
   });
   return User;
 };

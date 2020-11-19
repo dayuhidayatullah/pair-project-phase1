@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Tour</title>
+</head>
+<body>
+    <form action="/complaints/addComplaint" method="post">
+        <label>Complaint Description</label><br>
+        <input type="text" name="complaint_description"><br><br>
+        <label>Date</label><br>
+        <input type="date" name="date"><br><br>
+        <label>Campus</label><br>
+        <select name="admin">
+            <option value="">Choose...</option>
+            <% data.forEach(e => { %>
+                <option value="<%= e.id %>"><%= e.complaintLocation %></option>
+            <% }) %>
+        </select><br><br>
+        <button type="submit">Add Complaint</button>
+    </form>
+</body>
+</html>

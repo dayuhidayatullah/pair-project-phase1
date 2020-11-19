@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Tour</title>
+</head>
+<body>
+    <a href="/complaints/addComplaint"><button>Add Location Complaint</button></a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Complaint</th>
+                <th>Date</th>
+                <th>Location Complaint</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(e => { %>
+                <tr>
+                    <td><%= e.complaint_description %></td>
+                    <td><%= getDate(e.date) %></td>
+                    <td><%= e.Administration.complaintLocation %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
