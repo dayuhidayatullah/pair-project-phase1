@@ -1,4 +1,6 @@
 'use strict';
+const hashPassword = require('../helpers/password')
+
 const {
   Model
 } = require('sequelize');
@@ -24,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       beforeCreate: (instance, options) => {
         if(instance.lastName == '') instance.lastName = instance.firstName
         if(instance.firstName == '') instance.firstName = instance.lastName
+        if(instance.password.length > 0) instance.password = hashPassword(instance.password)
       }
     }
   });

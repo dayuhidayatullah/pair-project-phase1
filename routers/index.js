@@ -4,7 +4,7 @@ const complaintRoute = require('./complaintRoute')
 const userRoute = require('./userRoute')
 
 route.get('/', (req, res) => {
-    res.send('masuk routersss')
+    res.render('home')
 })
 
 route.use('/administrations', adminRoute)
