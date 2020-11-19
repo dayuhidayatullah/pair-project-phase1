@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Location Complaint</title>
+</head>
+<body>
+    <form action="/participants/<%= participant.id %>/tour" method="post">
+        <label>Username : <%= participant.lastName %></label><br><br>
+
+        <select name="ComplaintId" id="">
+            <option value="">--Choose Complaint--</option>
+            <% tour.forEach(e => { %>
+                <option value="<%= e.id %>"><%= e.complaint_description %></option>
+            <% }) %>
+        </select><br><br>
+        <button type="submit">Add Complaint</button>
+    </form>
+</body>
+</html>

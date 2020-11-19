@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List User</title>
+</head>
+<body>
+    <a href="/users/addUser"><button>Add User</button></a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Username</th>
+                <th>E-mail Address</th>
+                <th>Password</th>
+                <th>Complaint</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(e => { %>
+                <tr>
+                    <td><%= e.getFullName() %></td>
+                    <td><%= e.userName %></td>
+                    <td><%= e.gmail %></td>
+                    <td><%= e.password %></td>
+                    <td>
+                        <ul>
+                            <% e.Tours.forEach(e => { %>
+                                <li>
+                                    <p><%= e.complaint_description %></p>
+                                </li>
+                            <% }) %>
+                        </ul>
+                    </td>
+                    <td>
+                        <a href="/users/<%= e.id %>/complaint"><button>Add Complaint</button></a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
