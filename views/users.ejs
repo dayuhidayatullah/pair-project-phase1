@@ -14,7 +14,7 @@
                 <th>Username</th>
                 <th>E-mail Address</th>
                 <th>Password</th>
-                <th>Complaint</th>
+                <th>Complaints</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -27,7 +27,7 @@
                     <td><%= e.password %></td>
                     <td>
                         <ul>
-                            <% e.Tours.forEach(e => { %>
+                            <% e.Complaints.forEach(e => { %>
                                 <li>
                                     <p><%= e.complaint_description %></p>
                                 </li>
