@@ -13,25 +13,26 @@
                 <th>Full Name</th>
                 <th>Username</th>
                 <th>E-mail Address</th>
-                <th>Password</th>
                 <th>Complaint</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
+
             <% data.forEach(e => { %>
                 <tr>
                     <td><%= e.getFullName() %></td>
                     <td><%= e.userName %></td>
                     <td><%= e.gmail %></td>
-                    <td><%= e.password %></td>
                     <td>
                         <ul>
+                        <% if(e.Tours > 0){ %>
                             <% e.Tours.forEach(e => { %>
                                 <li>
                                     <p><%= e.complaint_description %></p>
                                 </li>
                             <% }) %>
+                            <% } %>
                         </ul>
                     </td>
                     <td>

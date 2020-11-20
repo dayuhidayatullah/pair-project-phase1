@@ -1,5 +1,5 @@
 'use strict';
-const hashPassword = require('../helpers/password')
+const {hashPassword} = require('../helpers/password')
 
 const {
   Model

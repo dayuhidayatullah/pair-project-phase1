@@ -3,6 +3,7 @@ const {comparePassword } = require('../helpers/password')
 
 class UserController {
     static show(req, res) {
+        console.log(req.session)
         User.findAll({
             include: [Complaint]
         })
@@ -71,7 +72,7 @@ class UserController {
         }
         User.create(obj)
             .then(data => {
-                res.redirect('/users')  
+                res.redirect('/')  
             })
             .catch(err => {
                 console.log(err )
@@ -79,7 +80,12 @@ class UserController {
             })
     }
     static loginForm(req, res){
-        res.render('loginForm')        
+        // if(!req.session.isLogin){
+            res.render('loginForm')        
+        // }
+        // else{
+        //     res.send('you cannot log in, because you are already logged in')
+        // }
     }
     static checkLogin(req, res){
         const userName = req.body.userName
@@ -91,6 +97,8 @@ class UserController {
         })
             .then(user => {
                 if(user && comparePassword(password, user.password)){
+                    req.session.isLogin = true
+                    console.log(req.session)
                     res.redirect('/')
                 }
                 else{
