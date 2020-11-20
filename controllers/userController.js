@@ -20,8 +20,8 @@ class UserController {
             .then(data => {
                 user = data
                 return Complaint.findAll()
-            }).then(Complaint => {
-                res.render('add-complaint', {User, Complaint})
+            }).then(data => {
+                res.render('add-complaint', {user, data})
             })
     }
 
