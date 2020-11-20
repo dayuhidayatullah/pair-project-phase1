@@ -7,7 +7,7 @@ class UserController {
             include: [Complaint]
         })
             .then(data => {
-                // res.render('users', {data})
+                res.render('users', {data})
             })
             .catch(err => {
                 res.send(err)
