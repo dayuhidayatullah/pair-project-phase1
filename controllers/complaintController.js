@@ -8,6 +8,7 @@ class ComplaintController {
         })
             .then(data => {
                 res.render('complaints', {data, getDate})
+                // res.send(data)
             })
             .catch(err => {
                 res.send(err)
@@ -26,7 +27,7 @@ class ComplaintController {
 
     static addPost(req,res) {
         let obj = {
-            name_complaint: req.body.name_complaint,
+            complaint_description: req.body.complaint_description,
             AdministrationId: req.body.administration,
             date: req.body.date
         }

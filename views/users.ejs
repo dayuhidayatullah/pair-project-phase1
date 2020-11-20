@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List User</title>
-</head>
-<body>
+<%- include('partials/header') %>
+<!-- Content-->
+<div class="container">
+<h2 class="text-center">List Complaint</h2>
     <a href="/users/addUser"><button>Add User</button></a>
     <table border="1">
         <thead>
@@ -14,7 +10,7 @@
                 <th>Username</th>
                 <th>E-mail Address</th>
                 <th>Password</th>
-                <th>Complaint</th>
+                <th>Complaints</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -27,7 +23,7 @@
                     <td><%= e.password %></td>
                     <td>
                         <ul>
-                            <% e.Tours.forEach(e => { %>
+                            <% e.Complaints.forEach(e => { %>
                                 <li>
                                     <p><%= e.complaint_description %></p>
                                 </li>
@@ -41,5 +37,5 @@
             <% }) %>
         </tbody>
     </table>
-</body>
-</html>
+</div>
+<%- include('partials/footer') %> 

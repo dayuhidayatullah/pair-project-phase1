@@ -7,7 +7,7 @@ class UserController {
             include: [Complaint]
         })
             .then(data => {
-                res.render('users', {data})
+                // res.render('users', {data})
             })
             .catch(err => {
                 res.send(err)
@@ -39,7 +39,7 @@ class UserController {
     }
 
     static addUser(req,res) {
-        res.render('add-user')
+        // res.render('add-user')
     }
 
     static addPost(req, res) {
