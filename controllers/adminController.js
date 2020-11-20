@@ -18,7 +18,7 @@ class AdminController {
 
     static addPost(req, res) {
         let obj = {
-            campus: req.body.campus,
+            complaintLocation: req.body.complaintLocation,
             address: req.body.address
         }
         Administration.create(obj)

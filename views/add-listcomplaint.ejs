@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Tour</title>
-</head>
-<body>
+<%- include('partials/header') %>
+<!-- Content-->
+<div class="container">
+    <h1>List Complaint</h1>
     <form action="/complaints/addComplaint" method="post">
-        <label>Complaint Description</label><br>
+        <label>Input Complaint Location</label><br>
         <input type="text" name="complaint_description"><br><br>
         <label>Date</label><br>
         <input type="date" name="date"><br><br>
-        <label>Campus</label><br>
-        <select name="admin">
+        <label>Complaint</label><br>
+        <select name="administration">
             <option value="">Choose...</option>
             <% data.forEach(e => { %>
                 <option value="<%= e.id %>"><%= e.complaintLocation %></option>
@@ -20,5 +16,5 @@
         </select><br><br>
         <button type="submit">Add Complaint</button>
     </form>
-</body>
-</html>
+</div>
+<%- include('partials/footer') %> 

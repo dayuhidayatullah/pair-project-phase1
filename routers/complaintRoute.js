@@ -4,7 +4,6 @@ const isLogin = require('../middlewares/checkLogin')
 
 route.get('/', ComplaintController.show)
 route.use(isLogin)
-route.get('/addTour', ComplaintController.addComplaint)
-route.post('/addTour', ComplaintController.addPost)
-
+route.get('/addComplaint', ComplaintController.addComplaint)
+route.post('/addComplaint', ComplaintController.addPost)
 module.exports = route

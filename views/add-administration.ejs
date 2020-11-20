@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Admin</title>
-</head>
-<body>
+<%- include('partials/header') %>
+<h1>Add Admin</h1>
+<div class="container"></div>
+</div>
     <form action="/administrations/addAdministration" method="post">
         <label>Location Complaint</label><br>
-        <input type="text" name="campus" placeholder="e.g. Jakarta Timur"><br><br>
+        <input type="text" name="complaintLocation" placeholder="e.g. Jakarta Timur"><br><br>
         <label>Address</label><br>
         <input type="text" name="address" placeholder="e.g. Bandung"><br><br>
         <button type="submit">Submit</button>
     </form>
-</body>
-</html>
+</div>
+<%- include('partials/footer') %> 

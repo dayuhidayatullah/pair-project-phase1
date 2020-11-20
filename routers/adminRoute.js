@@ -4,8 +4,8 @@ const isLogin = require('../middlewares/checkLogin')
 
 route.use(isLogin)
 route.get('/', adminController.show)
-route.get('/addUniversity', adminController.addAdministration)
-route.post('/addUniversity', adminController.addPost)
-route.get('/:id/listTour', adminController.listcomplaint)
+route.get('/addAdministration', adminController.addAdministration)
+route.post('/addAdministration', adminController.addPost)
+route.get('/:id/listComplaint', adminController.listcomplaint)
 
 module.exports = route
