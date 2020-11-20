@@ -16,7 +16,11 @@
                 <tr>
                     <td><%= e.complaint_description %></td>
                     <td><%= getDate(e.date) %></td>
-                    <td><%= e.Administration.complaintLocation %></td>
+                    <% if (e.Administration === null) { %>
+                        <td>Data is empty</td>
+                    <% } else { %>
+                        <td><%= e.Administration.complaintLocation %></td>
+                    <% } %>
                 </tr>
             <% }) %>
         </tbody>
